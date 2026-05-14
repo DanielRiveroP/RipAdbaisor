@@ -78,7 +78,25 @@ public class App {
                     }
                     break;
                 case 4:
-                    System.out.println("Has elegido: Eliminar");
+                    if (listaRestaurantes.isEmpty()) {
+                        System.out.println("No hay restaurantes para eliminar.");
+                    } else {
+                        System.out.println("\n--- ELIMINAR RESTAURANTE ---");
+
+                        for (int i = 0; i < listaRestaurantes.size(); i++) {
+                            System.out.println(i + ". " + listaRestaurantes.get(i).getNombre());
+                        }
+
+                        int indiceBorrar = Validaciones
+                                .leerEntero("Introduce el número del restaurante que quieres borrar:");
+
+                        if (indiceBorrar >= 0 && indiceBorrar < listaRestaurantes.size()) {
+                            Restaurante eliminado = listaRestaurantes.remove(indiceBorrar);
+                            System.out.println(">> El restaurante '" + eliminado.getNombre() + "' ha sido eliminado.");
+                        } else {
+                            System.out.println("Error: El número introducido no existe en la lista.");
+                        }
+                    }
                     break;
                 case 5:
                     System.out.println("Saliendo del programa... ¡Gracias!");
