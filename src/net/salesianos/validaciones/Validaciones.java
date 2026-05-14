@@ -21,6 +21,23 @@ public class Validaciones {
         return numero;
     }
 
+    public static int leerEntero(String mensaje) {
+        int numero = 0;
+        boolean valido = false;
+
+        do {
+            try {
+                System.out.println(mensaje);
+                numero = Integer.parseInt(sc.nextLine());
+                valido = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Debes introducir un número entero.");
+            }
+        } while (!valido);
+
+        return numero;
+    }
+
     public static double leerPuntuacion() {
         double nota;
         do {
@@ -43,5 +60,5 @@ public class Validaciones {
         } while (texto.isEmpty());
         
         return texto;
-    }
+    }           
 }
