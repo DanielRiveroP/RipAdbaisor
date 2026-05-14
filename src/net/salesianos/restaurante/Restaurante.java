@@ -39,7 +39,7 @@ public class Restaurante {
         return puntuacion;
     }
 
-    public void setPuntuación(double puntuacion) {
+    public void setPuntuacion(double puntuacion) {
         this.puntuacion = puntuacion;
     }
 }
