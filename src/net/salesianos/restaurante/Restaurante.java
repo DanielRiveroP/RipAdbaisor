@@ -35,7 +35,7 @@ public class Restaurante {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public double getPuntuación() {
+    public double getPuntuacion() {
         return puntuacion;
     }
 

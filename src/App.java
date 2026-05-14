@@ -63,7 +63,19 @@ public class App {
                     }
                     break;
                 case 3:
-                    System.out.println("Has elegido: Mostrar");
+                    if (listaRestaurantes.isEmpty()) {
+                        System.out.println("No hay restaurantes para mostrar.");
+                    } else {
+                        System.out.println("\n--- RANKING DE RESTAURANTES (DESCENDENTE) ---");
+                        listaRestaurantes.sort((r1, r2) -> Double.compare(r2.getPuntuacion(), r1.getPuntuacion()));
+                        for (Restaurante r : listaRestaurantes) {
+                            System.out.println("-----------------------------------");
+                            System.out.println("Nombre: " + r.getNombre());
+                            System.out.println("Puntuación: " + r.getPuntuacion() + " ⭐");
+                            System.out.println("Cocina: " + r.getTipoCocina());
+                            System.out.println("Dirección: " + r.getDireccion());
+                        }
+                    }
                     break;
                 case 4:
                     System.out.println("Has elegido: Eliminar");
